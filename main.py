@@ -1,8 +1,14 @@
+import os
+
+
+def get_file_names(path: str):
+    return os.listdir(path)
+
+
 def main():
-    # Use a breakpoint in the code line below to debug your script.
-    print('initial commit')  # Press Ctrl+F8 to toggle the breakpoint.
+    path = 'inputdata'
+    files = get_file_names(path)
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main()
