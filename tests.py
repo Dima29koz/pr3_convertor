@@ -1,7 +1,7 @@
 import unittest
 
 from PIL import ImageFile
-from main import get_file_names, get_image_obj
+from main import get_file_names, get_image_obj, save_with_extension
 
 
 class CalculateCase(unittest.TestCase):
@@ -13,3 +13,7 @@ class CalculateCase(unittest.TestCase):
     def test_get_image(self):
         image = get_image_obj('inputdata/1.png')
         self.assertTrue(isinstance(image, ImageFile.ImageFile) or image is None)
+
+    def test_save_image(self):
+        image = get_image_obj('inputdata/1.png')
+        self.assertTrue(save_with_extension(image, 'test', 'jpg'))
